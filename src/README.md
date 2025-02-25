@@ -1,4 +1,4 @@
-# Sleep Apnea ECG Classifier
+# Arrhythmia Classifier
 
 This project aims to classify differnet types of heartbeats from ECG signals using CNNs. We aim to identify and classify various arrhythmias using the **MIT-BIH Arrhythmia Database**.
 
