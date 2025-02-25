@@ -1,15 +1,24 @@
-# Sleep Apnea ECG Classifier
+# Arrhythmia Classifier
 
-This project aims to classify sleep apnea events using ECG data. The dataset is from the **Apnea-ECG Database**, and the goal is to process the ECG data, extract features (like spectrograms), and use a deep learning model for classification.
+This project aims to classify differnet types of heartbeats from ECG signals using CNNs. We aim to identify and classify various arrhythmias using the **MIT-BIH Arrhythmia Database**.
 
-## About the Apnea-ECG Dataset
+## Dataset
 
-The **Apnea-ECG Database** is a collection of ECG signals specifically collected to study the presence of sleep apnea. Sleep apnea is a sleep disorder characterized by interruptions in breathing during sleep, and it can be detected through changes in the ECG signal. The dataset contains both normal and apnea events labeled in the annotations.
+The **MIT-BIH Arrhythmia Database** contains 48 half-hour excerpts of two-channel ambulatory ECG recordings, obtained from 47 subjects studied by the BIH Arrhythmia Laboratory between 1975 and 1979. 
 
-- **ECG signals**: Each file contains ECG data sampled at 100 Hz.
-- **Annotations**: Each event is labeled as either 'A' for apnea or 'N' for normal breathing, where the apnea events represent moments of interrupted breathing, and normal breathing events represent stable sleep patterns.
-  
-In this project, we will use the ECG signals from the dataset to train a machine learning model capable of identifying sleep apnea events based on the ECG features. We will process the signals into spectrograms, which are a visual representation of the frequency content of the signal over time, to be used as input for the model.
+The dataset includes annotations for each heartbeat, indicating the type of arrhythmia.
+
+**Classes:**
+Normal beat (N)
+Left bundle branch block beat (L)
+Right bundle branch block beat (R)
+Atrial premature beat (A)
+Ventricular premature contraction (V)
+Fusion of ventricular and normal beat (F)
+Unclassifiable beat (Q)
+Other types of beats as specified in the dataset
+
+**Generating Spectrograms**: We convert the one-dimensional ECG signals into two-dimensional spectrograms. This helps in capturing the time-frequency characteristics of the signals.
 
 
 ## Setting Up The Environment
@@ -44,18 +53,18 @@ pip install -r requirements.txt
 ```
 
 
-### 3. Placement of Dataset
+### 3. Prepare the data
 
-Download the [dataset](https://www.physionet.org/content/apnea-ecg/1.0.0/) from here. Once downloaded, extract the dataset and place the files in the data/ folder. Your directory should look something like this:
+Download the [dataset](https://physionet.org/content/mitdb/1.0.0/) from here. Once downloaded, extract the dataset and place the files in the data/ folder. Your directory should look something like this:
 
 ```
 src/
 │
 ├── data/
-│   └── apnea-ecg-database-1.0.0/
-│       ├── a01.dat
-│       ├── a01.hea
-│       └── a01.apn
+│   └── mit-bih-arrhythmia-database-1.0.0
+│       ├── 100.atr
+│       ├── 100.dat
+│       └── 100.hea
 └── ...
 ```
 
