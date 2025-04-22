@@ -47,9 +47,6 @@ python3 -m venv env
 env\Scripts\activate
 # On macOS/Linux:
 source env/bin/activate
-
-# Install all necessary dependencies
-pip install -r requirements.txt
 ```
 
 
